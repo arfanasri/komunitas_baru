@@ -75,25 +75,30 @@ $level = levelkomunitas($_SESSION["user"],$id_komunitas);
 		<tr>
 			<th>Anggota</th>
 			<td>
-				<div class="list-group">
+				
 <?PHP
 	$kuerianggota = mysqli_query($koneksi,"SELECT a.*, b.* FROM level as a LEFT JOIN user as b ON a.id_user = b.username WHERE a.id_komunitas = '$id_komunitas' ORDER BY a.level ASC");
 	
 	while($dataanggota = mysqli_fetch_array($kuerianggota)){
 		if($level == "admin"){
-			if($dataanggota["level"] != "admin"){
-				echo "<a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Promosi' class='list-group-item' onclick='return confirm(".'"Apakah Anda Ingin Mempromosikan Admin User Ini?"'.")'>";
-			} else {
-				echo "<a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Demosi' class='list-group-item' onclick='return confirm(".'"Apakah Anda Ingin Mendemosikan User Ini?"'.")'>";
-			}
+			echo "<a href='index.php?laman=lihat&id=".$dataanggota['username']."'>";
 		} else {
-			echo "<a class='list-group-item'>";
+			echo "<a>";
 		}
-			echo $dataanggota["nama_lengkap"]." (".$dataanggota["level"].")";
-			echo "</a>";
+		echo $dataanggota["nama_lengkap"]." (".$dataanggota["level"].")";
+		echo "</a>";
+		if($level == "admin"){
+			if($dataanggota["level"] != "admin"){
+				echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Promosi' onclick='return confirm(".'"Apakah Anda Ingin Mempromosikan Admin User Ini?"'.")'>";
+			} else {
+				echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Demosi' onclick='return confirm(".'"Apakah Anda Ingin Mendemosikan User Ini?"'.")'>";
+			}
+			echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Kick' onclick='return confirm(".'"Apakah Anda Ingin Mengkick User Ini?"'.")'>Kick</a>";
+		}
+		echo "<br>";
 	}
 ?>
-				</div>
+				
 			</td>
 		</tr>
 <?PHP

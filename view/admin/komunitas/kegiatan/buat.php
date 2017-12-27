@@ -3,7 +3,6 @@
 <div class="text-center">
 	<h2>Kegiatan Baru</h2>
 </div>
-<img class="img-responsive displayed" src="images/short.png" alt="Company about"/>
 <div class="text-justify">
 	<form method="post" action="index.php?laman=komunitas&id=<?PHP echo $_GET["id"] ?>" enctype="multipart/form-data">
 		<div class="form-group">

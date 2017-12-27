@@ -23,7 +23,8 @@
 		<input type="hidden" name="aksi" value="KegiatanEdit">
 		<input type="hidden" name="id_komunitas" value="<?PHP echo $data["id_komunitas"] ?>">
 		<input type="hidden" name="id_kegiatan" value="<?PHP echo $data["id_kegiatan"] ?>">
-		<button type="submit" class="btn btn-default">Buat</button>
+		<button type="submit" class="btn btn-default">Simpan</button>
+		<a href="index.php?laman=komunitas&id=<?= $data["id_komunitas"]?>" class="btn btn-danger">Batal</a>
 	</form>
 </div>
 <script>

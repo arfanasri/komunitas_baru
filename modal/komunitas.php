@@ -99,6 +99,13 @@
 			
 			$kueri = mysqli_query($koneksi,"UPDATE level SET level = 'admin' WHERE id_level = '$id'");
 		}
+		if($aksi == "Kick"){
+			$id = $_GET["idl"];
+			
+			
+			$kueri = mysqli_query($koneksi,"DELETE FROM level WHERE id_level = '$id'");
+		}
+		
 		if($aksi == "Demosi"){
 			$id = $_GET["idl"];
 
