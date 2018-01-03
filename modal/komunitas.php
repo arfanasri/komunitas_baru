@@ -96,7 +96,6 @@
 		if($aksi == "Promosi"){
 			$id = $_GET["idl"];
 			
-			
 			$kueri = mysqli_query($koneksi,"UPDATE level SET level = 'admin' WHERE id_level = '$id'");
 		}
 		if($aksi == "Kick"){

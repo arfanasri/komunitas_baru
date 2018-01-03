@@ -24,6 +24,9 @@
 		// lihat
 	} else if($laman == "lihat" and $_SESSION["level"] == "admin") {
 		$page = "view/admin/lihat.php";
+		// lihat User
+	} else if($laman == "lihatkomuser") {
+		$page = "view/admin/komunitas/lihatuser.php";
 		// komunitas
 	} else if($laman == "listkomunitas" and $_SESSION["level"] == "admin") {
 		$page = "view/admin/komunitas/list.php";

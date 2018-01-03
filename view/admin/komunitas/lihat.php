@@ -81,20 +81,12 @@ $level = levelkomunitas($_SESSION["user"],$id_komunitas);
 	
 	while($dataanggota = mysqli_fetch_array($kuerianggota)){
 		if($level == "admin"){
-			echo "<a href='index.php?laman=lihat&id=".$dataanggota['username']."'>";
+			echo "<a href='index.php?laman=lihatkomuser&idk=".$id."&idl=".$dataanggota['id_level']."'>";
 		} else {
 			echo "<a>";
 		}
 		echo $dataanggota["nama_lengkap"]." (".$dataanggota["level"].")";
 		echo "</a>";
-		if($level == "admin"){
-			if($dataanggota["level"] != "admin"){
-				echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Promosi' onclick='return confirm(".'"Apakah Anda Ingin Mempromosikan Admin User Ini?"'.")'>";
-			} else {
-				echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Demosi' onclick='return confirm(".'"Apakah Anda Ingin Mendemosikan User Ini?"'.")'>";
-			}
-			echo " ; <a href='index.php?laman=komunitas&id=".$_GET["id"]."&idl=".$dataanggota["id_level"]."&aksi=Kick' onclick='return confirm(".'"Apakah Anda Ingin Mengkick User Ini?"'.")'>Kick</a>";
-		}
 		echo "<br>";
 	}
 ?>
