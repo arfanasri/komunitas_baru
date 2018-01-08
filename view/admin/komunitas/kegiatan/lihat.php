@@ -6,6 +6,7 @@ if($_SESSION["level"] == "guest") {
 include("modal/kegiatan.php");
 
 $id=$_GET["id"];
+$idk=$_GET["idk"];
 
 $kueri = mysqli_query($koneksi,"SELECT * FROM kegiatan WHERE id_kegiatan='$id'");
 $data = mysqli_fetch_array($kueri);
@@ -48,7 +49,8 @@ $level = levelkegiatan($_SESSION["user"],$id_kegiatan);
 					<input type="hidden" name="aksi" value="Komentar">
 					<input type="hidden" name="id_kegiatan" value="<?PHP echo $data["id_kegiatan"] ?>">
 					<input type="hidden" name="id_komunitas" value="<?PHP echo $data["id_komunitas"] ?>">
-					<input type="submit" name="simpan" value="Komentar">
+					<input class="btn btn-default" type="submit" name="simpan" value="Komentar">
+					<a class="btn btn-default" href="index.php?laman=komunitas&id=<?= $idk ?>">Kembali</a>
 				</form>
 				</th>
 		</tr>

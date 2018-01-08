@@ -50,7 +50,7 @@ $level = levelkomunitas($_SESSION["user"],$id_komunitas);
 ?>
 				<div class="list-group">
 							<?PHP while($datakegaitan = mysqli_fetch_array($kuerikegiatan)){ ?>
-					<a href="index.php?laman=kegiatan&id=<?PHP echo $datakegaitan["id_kegiatan"] ?>" class="list-group-item"><?PHP echo $datakegaitan["nama_kegiatan"] ?></a>
+					<a href="index.php?laman=kegiatan&idk=<?= $id ?>&id=<?PHP echo $datakegaitan["id_kegiatan"] ?>" class="list-group-item"><?PHP echo $datakegaitan["nama_kegiatan"] ?></a>
 							<?PHP } ?>	
 				</div>
 <?PHP 
