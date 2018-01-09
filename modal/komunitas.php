@@ -93,6 +93,12 @@
 			// echo "<script>alert('".mysqli_error($koneksi)."');</script>";
 		}
 		
+		if($aksi == "Tolak"){
+			$id = $_GET["iddaftar"];
+			
+			$kueri = mysqli_query($koneksi,"DELETE FROM daftar WHERE id_daftar = '$id'");
+		}
+		
 		if($aksi == "Promosi"){
 			$id = $_GET["idl"];
 			

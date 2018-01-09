@@ -106,7 +106,7 @@ $level = levelkomunitas($_SESSION["user"],$id_komunitas);
 	$kuericalonanggota = mysqli_query($koneksi,"SELECT a.*, b.* FROM daftar as a LEFT JOIN user as b ON a.id_user = b.username WHERE a.id_komunitas = '$id_komunitas'");
 	
 	while($datacalonanggota = mysqli_fetch_array($kuericalonanggota)){
-		echo "<a class='list-group-item' href='index.php?laman=lihancalon&iddaftar=".$datacalonanggota["id_daftar"]."&id=".$id_komunitas."'>";
+		echo "<a class='list-group-item' href='index.php?laman=komunitas&aksi=Terima&iddaftar=".$datacalonanggota["id_daftar"]."&id=".$id_komunitas."' onclick='return confirm(".'"Apakah Anda Ingin Menerima User Ini?"'.")'>";
 		echo $datacalonanggota["nama_lengkap"];
 		echo "</a>";
 	}

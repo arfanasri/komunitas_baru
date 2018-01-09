@@ -27,6 +27,9 @@
 		// lihat User
 	} else if($laman == "lihatkomuser") {
 		$page = "view/admin/komunitas/lihatuser.php";
+		// lihat User
+	} else if($laman == "lihancalon") {
+		$page = "view/admin/komunitas/lihatpendaftar.php";
 		// komunitas
 	} else if($laman == "listkomunitas" and $_SESSION["level"] == "admin") {
 		$page = "view/admin/komunitas/list.php";
